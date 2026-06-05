@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>💚</text></svg>">
+  <title>Girish & Rekha | 24th Marriage Anniversary</title>
+  <meta name="description" content="Celebrating 24 years of eternal love, happiness, and beautiful memories. Join us in wishing Girish and Rekha a very Happy 24th Marriage Anniversary!" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Girish & Rekha - 24th Marriage Anniversary" />
+  <meta property="og:description" content="Celebrating 24 years of eternal love, happiness, and beautiful memories. Join us in wishing Girish and Rekha a very Happy 24th Marriage Anniversary!" />
+  <meta property="og:image" content="assets/hero.png" />
+
+  <!-- Google Fonts: Playfair Display for elegant headings, Inter for clean body text, and Great Vibes for scripts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for elegant modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Canvas for Falling Rose Petals and Green Leaves -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Audio Player -->
+  <div class="audio-widget-container" id="audio-widget">
+    <button class="audio-toggle-btn" id="audio-toggle" aria-label="Play romantic anniversary music">
+      <i class="fas fa-music" id="audio-icon"></i>
+    </button>
+    <div class="audio-info" id="audio-info">
+      <span class="music-title">A Thousand Years (Instrumental)</span>
+      <span class="music-status">Paused</span>
+    </div>
+    <!-- Romantic Instrumental Placeholder Music -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#" class="logo-link" aria-label="Girish and Rekha Anniversary home">
+        <span class="logo-text">G&R</span>
+      </a>
+      
+      <button class="mobile-nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item"><a href="#home" class="nav-link active" data-sec="home">Home</a></li>
+          <li class="nav-item"><a href="#letters" class="nav-link" data-sec="letters">Letters of Love</a></li>
+          <li class="nav-item"><a href="#video" class="nav-link" data-sec="video">Love Video</a></li>
+          <li class="nav-item"><a href="#story" class="nav-link" data-sec="story">Our Journey</a></li>
+          <li class="nav-item"><a href="#gallery" class="nav-link" data-sec="gallery">Gallery</a></li>
+
+          <li class="nav-item"><a href="#wishes" class="nav-link" data-sec="wishes">Wishes Board</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home" aria-label="Anniversary Celebration Introduction">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-content-wrapper">
+        <p class="hero-pre-title reveal">Happy 24th Marriage Anniversary</p>
+        <h1 class="hero-title reveal">Girish & Rekha</h1>
+        <p class="hero-date reveal">22nd June</p>
+        
+        <p class="hero-subtitle reveal">Celebrating 24 Years of Unconditional Love, Eternal Laughter, and Shared Dreams</p>
+        
+        <!-- Countdown Widget -->
+        <div class="countdown-container reveal" id="countdown" aria-live="polite">
+          <div class="countdown-card">
+            <span class="countdown-value" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-value" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-value" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-value" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <a href="#letters" class="scroll-down-btn reveal" aria-label="Scroll down to letters of love">
+          <span class="btn-text">Read Letters of Love</span>
+          <i class="fas fa-chevron-down btn-icon"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Letters of Love / Interactive Vows Section -->
+    <section class="letters-section reveal" id="letters" aria-labelledby="letters-heading">
+      <div class="section-container">
+        <p class="section-tagline">Heartfelt Expressions</p>
+        <h2 class="section-heading" id="letters-heading">Letters of Love</h2>
+        <p class="section-desc">Click on the envelopes to open and read the secret vows and heartfelt messages exchanged across 24 years.</p>
+        
+        <div class="envelopes-grid">
+          <!-- Envelope 1: Girish to Rekha -->
+          <div class="envelope-wrapper" id="env-girish">
+            <div class="envelope-card" onclick="toggleEnvelope('env-girish')" tabindex="0" role="button" aria-label="Open letter from Girish to Rekha" aria-expanded="false">
+              <div class="envelope-flap"></div>
+              <div class="envelope-pocket">
+                <span class="envelope-label"><i class="fas fa-heart"></i> To Rekha</span>
+              </div>
+              <div class="letter-paper">
+                <div class="letter-content">
+                  <h3 class="letter-title">To my dearest Rekha,</h3>
+                  <p class="letter-text">24 years ago, I held your hand and promised to walk beside you through whatever life brought our way. Looking back today, I realize that every challenge was made easy because you were there, and every joy was doubled because I shared it with you.</p>
+                  <p class="letter-text">Thank you for your infinite patience, your warm laughter, and for making our house a true home. My love for you has only grown deeper with time.</p>
+                  <p class="letter-signature">Forever yours,<br>Girish</p>
+                </div>
+              </div>
+            </div>
+            <button class="close-letter-btn" onclick="toggleEnvelope('env-girish'); event.stopPropagation();" aria-label="Close letter">Close Letter</button>
+          </div>
+
+          <!-- Envelope 2: Rekha to Girish -->
+          <div class="envelope-wrapper" id="env-rekha">
+            <div class="envelope-card" onclick="toggleEnvelope('env-rekha')" tabindex="0" role="button" aria-label="Open letter from Rekha to Girish" aria-expanded="false">
+              <div class="envelope-flap"></div>
+              <div class="envelope-pocket">
+                <span class="envelope-label"><i class="fas fa-heart"></i> To Girish</span>
+              </div>
+              <div class="letter-paper">
+                <div class="letter-content">
+                  <h3 class="letter-title">To my beloved Girish,</h3>
+                  <p class="letter-text">Happy 24th anniversary! It feels like just yesterday we started this beautiful journey. Through every twist and turn, you have been my rock, my voice of reason, and my greatest source of comfort.</p>
+                  <p class="letter-text">Thank you for always putting our family first, for supporting my dreams, and for loving me just the way I am. Here is to many more years of holding hands and making beautiful memories.</p>
+                  <p class="letter-signature">With all my love,<br>Rekha</p>
+                </div>
+              </div>
+            </div>
+            <button class="close-letter-btn" onclick="toggleEnvelope('env-rekha'); event.stopPropagation();" aria-label="Close letter">Close Letter</button>
+          </div>
+
+          <!-- Envelope 3: Children to Parents -->
+          <div class="envelope-wrapper" id="env-children">
+            <div class="envelope-card" onclick="toggleEnvelope('env-children')" tabindex="0" role="button" aria-label="Open letter from children to Mom and Dad" aria-expanded="false">
+              <div class="envelope-flap"></div>
+              <div class="envelope-pocket">
+                <span class="envelope-label"><i class="fas fa-users"></i> To Mom & Dad</span>
+              </div>
+              <div class="letter-paper">
+                <div class="letter-content">
+                  <h3 class="letter-title">To our wonderful Mom & Dad,</h3>
+                  <p class="letter-text">Happy 24th Marriage Anniversary! Growing up, we didn't have to look far for role models. By watching the two of you support each other, compromise, and grow stronger together, we learned what true love and commitment look like.</p>
+                  <p class="letter-text">Thank you for the sacrifices you've made for us, and for creating a home filled with warmth, stability, and joy. We love you both so much!</p>
+                  <p class="letter-signature">Your loving children</p>
+                </div>
+              </div>
+            </div>
+            <button class="close-letter-btn" onclick="toggleEnvelope('env-children'); event.stopPropagation();" aria-label="Close letter">Close Letter</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Love Video / Special Surprise Section -->
+    <section class="video-section reveal" id="video" aria-labelledby="video-heading">
+      <div class="section-container">
+        <p class="section-tagline">A Sweet Surprise</p>
+        <h2 class="section-heading" id="video-heading">Our Love Story in Motion</h2>
+        <p class="section-desc">Click the red pulsing heart to reveal a special video message and collection of beautiful memories.</p>
+        
+        <div class="heart-pulse-wrapper">
+          <button class="heart-trigger-btn" id="play-video-heart" aria-label="Play anniversary video surprise">
+            <i class="fas fa-heart"></i>
+          </button>
+          <div class="ripple ripple-1"></div>
+          <div class="ripple ripple-2"></div>
+        </div>
+        <p class="click-instruction-text">Tap the Heart to Play</p>
+      </div>
+    </section>
+
+    <!-- Video Lightbox Modal -->
+    <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Anniversary video viewer">
+      <button class="video-modal-close" id="close-video-modal" aria-label="Close video viewer">&times;</button>
+      <div class="video-modal-content">
+        <video id="anniversary-video" controls preload="metadata">
+          <source src="assets/anniversary_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- Our Journey / Timeline Section -->
+    <section class="story-section reveal" id="story" aria-labelledby="story-heading">
+      <div class="section-container">
+        <p class="section-tagline">A Beautiful Chapter</p>
+        <h2 class="section-heading" id="story-heading">Our Journey</h2>
+        <p class="section-desc">Looking back at 24 years of milestones, adventures, and milestones that shaped our life together.</p>
+        
+        <div class="timeline-container">
+          <!-- Timeline Entry 1 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">June 22, 2002</div>
+            <div class="timeline-content">
+              <div class="timeline-media">
+                <img src="assets/wedding.png" alt="Wedding Day Placeholder" class="timeline-img">
+                <div class="media-placeholder-text">The Wedding Day</div>
+              </div>
+              <h3 class="timeline-title">The Wedding Day</h3>
+              <p class="timeline-text">Girish and Rekha tied the knot in a beautiful ceremony filled with love, vows, and the blessings of friends and family. It was the beginning of an eternal love story.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 2 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">March 18, 2003</div>
+            <div class="timeline-content">
+              <div class="timeline-media">
+                <img src="assets/parenthood.png" alt="Parenthood Placeholder" class="timeline-img">
+                <div class="media-placeholder-text">Welcoming Their Firstborn</div>
+              </div>
+              <h3 class="timeline-title">A New Chapter: Firstborn Child</h3>
+              <p class="timeline-text">A beautiful new chapter began with the birth of their first child (me!) on March 18, 2003, bringing infinite smiles, baby steps, and deep joy into their home.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 3 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">February 9, 2005</div>
+            <div class="timeline-content">
+              <div class="timeline-media">
+                <img src="assets/home.png" alt="Family Nest Placeholder" class="timeline-img">
+                <div class="media-placeholder-text">Double the Joy: My Brother's Birth</div>
+              </div>
+              <h3 class="timeline-title">Completing the Family Grid</h3>
+              <p class="timeline-text">On February 9, 2005, their second child—my brother—was born. Their family was now complete, filled with twice the laughter, twice the steps, and twice the love.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 4 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2012</div>
+            <div class="timeline-content">
+              <div class="timeline-media">
+                <img src="assets/journey.png" alt="Family Adventures Placeholder" class="timeline-img">
+                <div class="media-placeholder-text">Adventures & Travels</div>
+              </div>
+              <h3 class="timeline-title">Years of Exploration</h3>
+              <p class="timeline-text">From family vacations to quiet weekends, they traversed the map, built memories, and taught their children the value of curiosity, family bonds, and adventure.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 5 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020</div>
+            <div class="timeline-content">
+              <div class="timeline-media">
+                <img src="assets/home.png" alt="Home and Comfort Placeholder" class="timeline-img">
+                <div class="media-placeholder-text">Stronger Together</div>
+              </div>
+              <h3 class="timeline-title">Weathering Storms</h3>
+              <p class="timeline-text">When the world stood still, their home was a sanctuary of safety, joy, and comfort. They proved that no challenge is too big when faced side-by-side with love.</p>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 6 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">June 22, 2026</div>
+            <div class="timeline-content">
+              <div class="timeline-media">
+                <img src="assets/silver.png" alt="24th Anniversary Celebration Placeholder" class="timeline-img">
+                <div class="media-placeholder-text">The 24th Anniversary</div>
+              </div>
+              <h3 class="timeline-title">The 24-Year Milestone</h3>
+              <p class="timeline-text">Celebrating 24 years of marriage. A beautiful prelude to the upcoming Silver Jubilee, filled with gratitude for the past and excitement for the future.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memories Gallery Section -->
+    <section class="gallery-section reveal" id="gallery" aria-labelledby="gallery-heading">
+      <div class="section-container">
+        <p class="section-tagline">Visual Diary</p>
+        <h2 class="section-heading" id="gallery-heading">Memory Gallery</h2>
+        <p class="section-desc">A collection of beautiful moments captured over 24 years. Hover or click to zoom in.</p>
+        
+        <div class="gallery-grid">
+          <!-- Gallery Item 1 -->
+          <div class="gallery-item reveal" onclick="openLightbox(0)" tabindex="0" role="button" aria-label="View large size of Wedding Day photo">
+            <div class="gallery-img-wrapper">
+              <img src="assets/wedding.png" alt="Wedding day of Girish and Rekha" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                <span class="gallery-title">The Wedding Day</span>
+                <span class="gallery-year">2002</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Gallery Item 2 -->
+          <div class="gallery-item reveal" onclick="openLightbox(1)" tabindex="0" role="button" aria-label="View large size of First Home photo">
+            <div class="gallery-img-wrapper">
+              <img src="assets/home.png" alt="Girish and Rekha in their new home" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                <span class="gallery-title">Our Sanctuary</span>
+                <span class="gallery-year">2008</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Gallery Item 3 -->
+          <div class="gallery-item reveal" onclick="openLightbox(2)" tabindex="0" role="button" aria-label="View large size of Family Trip photo">
+            <div class="gallery-img-wrapper">
+              <img src="assets/journey.png" alt="Girish, Rekha and children during a family holiday" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                <span class="gallery-title">Adventures of a Lifetime</span>
+                <span class="gallery-year">2015</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 4 -->
+          <div class="gallery-item reveal" onclick="openLightbox(3)" tabindex="0" role="button" aria-label="View large size of Quiet Moments photo">
+            <div class="gallery-img-wrapper">
+              <img src="assets/parenthood.png" alt="Girish and Rekha laughing together" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                <span class="gallery-title">Laughter & Joy</span>
+                <span class="gallery-year">2019</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 5 -->
+          <div class="gallery-item reveal" onclick="openLightbox(4)" tabindex="0" role="button" aria-label="View large size of Anniversary Celebration photo">
+            <div class="gallery-img-wrapper">
+              <img src="assets/silver.png" alt="Girish and Rekha cutting a cake" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                <span class="gallery-title">Steps to 25 Years</span>
+                <span class="gallery-year">2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 6 -->
+          <div class="gallery-item reveal" onclick="openLightbox(5)" tabindex="0" role="button" aria-label="View large size of Candid Love photo">
+            <div class="gallery-img-wrapper">
+              <img src="assets/hero.png" alt="Girish and Rekha looking at each other" class="gallery-img">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+                <span class="gallery-title">Eternal Companions</span>
+                <span class="gallery-year">2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div class="lightbox-modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close image viewer">&times;</button>
+      <button class="lightbox-prev" onclick="prevLightbox()" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+      <button class="lightbox-next" onclick="nextLightbox()" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+      <div class="lightbox-content">
+        <img src="" alt="" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+    </div>
+
+
+
+    <!-- Wishes Board Section -->
+    <section class="wishes-section reveal" id="wishes" aria-labelledby="wishes-heading">
+      <div class="section-container">
+        <p class="section-tagline">Congratulate Them</p>
+        <h2 class="section-heading" id="wishes-heading">Anniversary Wishes Board</h2>
+        <p class="section-desc">Leave a heartfelt note, a sweet memory, or blessing wishes for Girish and Rekha to read on their special day!</p>
+        
+        <div class="wishes-layout">
+          <!-- Wishes Form -->
+          <div class="wishes-form-card reveal">
+            <h3 class="form-title">Leave a Wish</h3>
+            <form id="wish-form" onsubmit="handleWishSubmit(event)" novalidate>
+              <div class="form-group">
+                <label for="wish-name">Your Name <span class="required-star">*</span></label>
+                <input type="text" id="wish-name" class="form-input" placeholder="e.g. Rahul, Aunt Meera" required autocomplete="name">
+                <span class="error-message" id="name-error">Please enter your name</span>
+              </div>
+              
+              <div class="form-group">
+                <label for="wish-relation">Your Relationship <span class="required-star">*</span></label>
+                <select id="wish-relation" class="form-input" required>
+                  <option value="" disabled selected>Select Relationship</option>
+                  <option value="Children">Child</option>
+                  <option value="Family">Family / Relative</option>
+                  <option value="Friend">Friend</option>
+                  <option value="Well-wisher">Well-wisher</option>
+                </select>
+                <span class="error-message" id="relation-error">Please select your relationship</span>
+              </div>
+
+              <div class="form-group">
+                <label for="wish-message">Heartfelt Message <span class="required-star">*</span></label>
+                <textarea id="wish-message" class="form-input text-area" rows="4" placeholder="Write your warm wishes, congratulations, or special memories here..." required></textarea>
+                <span class="error-message" id="message-error">Please enter your wish message</span>
+              </div>
+
+              <button type="submit" class="submit-btn" id="submit-wish-btn">
+                <span class="btn-text" id="submit-btn-text">Submit Wish</span>
+                <span class="btn-spinner hidden" id="submit-btn-spinner"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+              </button>
+            </form>
+            <div class="form-success-alert hidden" id="form-success">
+              <i class="fas fa-check-circle success-icon"></i>
+              <div class="success-alert-content">
+                <h4>Wish Posted Successfully!</h4>
+                <p>Thank you for sharing your love and blessings. Your wish is now showing on the wishes wall!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wishes Board Wall -->
+          <div class="wishes-board-wrapper reveal">
+            <div class="board-header">
+              <h3 class="board-title">Blessings Wall</h3>
+              <div class="board-tabs">
+                <button class="board-tab active" onclick="filterWishes('All')" id="tab-all">All</button>
+                <button class="board-tab" onclick="filterWishes('Children')" id="tab-children">Children</button>
+                <button class="board-tab" onclick="filterWishes('Family')" id="tab-family">Family</button>
+                <button class="board-tab" onclick="filterWishes('Friend')" id="tab-friend">Friends</button>
+              </div>
+            </div>
+            
+            <div class="wishes-wall" id="wishes-wall-grid">
+              <!-- Dynamically populated wish cards -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-logo">G&R</div>
+      <p class="footer-blurb">Thank you for visiting. Let's make this 24th anniversary a day to remember for Girish & Rekha as they approach their silver jubilee year.</p>
+      <div class="footer-socials">
+        <span class="social-icon" aria-label="Love"><i class="fas fa-heart"></i></span>
+        <span class="social-icon" aria-label="Togetherness"><i class="fas fa-hand-holding-heart"></i></span>
+        <span class="social-icon" aria-label="Champagne"><i class="fas fa-glass-cheers"></i></span>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">&copy; 2026 Crafted with <span class="heart-symbol">&hearts;</span> by their family. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="main.js"></script>
+</body>
+</html>
