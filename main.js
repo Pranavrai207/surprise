@@ -174,7 +174,7 @@ const GALLERY_PHOTOS = [
   { src: "./assets/IMG20200622215751.jpg", title: "Cheers to Togetherness", year: "2020", desc: "Girish & Rekha, walking hand-in-hand through life's twists and turns." },
   { src: "./assets/IMG20210326191152.jpg", title: "Nature Trails", year: "2021", desc: "Taking in the beautiful, refreshing views during a family getaway." },
   { src: "./assets/IMG20210326191202.jpg", title: "Family Outdoors", year: "2021", desc: "A gorgeous portrait of the family surrounded by grid greenery." },
-  { src: "./assets/IMG20220622184258.jpg", title: "Celebrating Two Decades", year: "2022", desc: "Marking 20 years of beautiful union, trust, and shared dreams." },
+  { src: "./assets/IMG20220622184258.jpg", title: "Guru's Birthday", year: "Childhood", desc: "Celebrating Guru's childhood birthday party with cakes, balloons, and family love." },
   { src: "./assets/IMG20220622184453.jpg", title: "Mom & Kids", year: "Childhood", desc: "A sweet childhood memory of Mom holding hands with her little one, guiding their first steps." },
   { src: "./assets/IMG20220622184914.jpg", title: "Two Decades of Love", year: "2022", desc: "Girish & Rekha cutting their 20th anniversary cake with family." },
   { src: "./assets/IMG_20240622_212138.jpg", title: "Steps to 25 Years", year: "2024", desc: "Dressed in elegant matching green outfits, celebrating 22 years of love." },
