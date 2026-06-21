@@ -895,11 +895,11 @@ p {
 }
 
 /* Custom grid spanning layouts for rich masonry look */
-.gallery-item:nth-child(2) {
+.gallery-item:nth-child(6n + 2) {
   grid-row: span 2;
 }
 
-.gallery-item:nth-child(5) {
+.gallery-item:nth-child(6n + 5) {
   grid-column: span 2;
 }
 
@@ -910,7 +910,7 @@ p {
   min-height: 250px;
 }
 
-.gallery-item:nth-child(2) .gallery-img-wrapper {
+.gallery-item:nth-child(6n + 2) .gallery-img-wrapper {
   min-height: 524px;
 }
 

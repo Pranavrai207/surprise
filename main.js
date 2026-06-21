@@ -149,19 +149,75 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================================
-   TIMELINE MEDIA LAUNCHER (Optional placeholder asset viewer)
+   TIMELINE MEDIA LAUNCHER (Dynamic Gallery rendering)
    ========================================================================== */
-// Standard placeholder files that the user will drop inside the assets folder
 const GALLERY_PHOTOS = [
-  { src: "./assets/wedding_day.jpg", title: "The Wedding Day", desc: "Married on June 22, 2002. A beautiful wedding ceremony starting a lifespan of love." },
-  { src: "./assets/IMG-20210328-WA0013.jpg", title: "Our Sanctuary", desc: "Setting up their family home, building a nesting space filled with warmth, flowers, and joy." },
-  { src: "./assets/IMG_20200510_120608.jpg", title: "Adventures of a Lifetime", desc: "Taking their children on scenic family roadtrips and exploring beautiful places together." },
-  { src: "./assets/IMG-20210328-WA0016.jpg", title: "Laughter & Joy", desc: "Sharing small funny everyday candid moments, showing that partnership makes life light." },
-  { src: "./assets/IMG_20240622_212138.jpg", title: "Steps to 25 Years", desc: "Approaching their 24th anniversary, celebrating the journey as they head toward the Silver Jubilee." },
-  { src: "./assets/IMG-20210328-WA0014.jpg", title: "Eternal Companions", desc: "Girish & Rekha, walking hand-in-hand, supporting each other and inspiring everyone around them." }
+  { src: "./assets/wedding_day.jpg", title: "The Wedding Day", year: "2002", desc: "Married on June 22, 2002. A beautiful wedding ceremony starting a lifespan of love." },
+  { src: "./assets/firstborn.jpg", title: "Welcoming Pranav", year: "2003", desc: "Their first bundle of joy, bringing infinite smiles and deep joy." },
+  { src: "./assets/brother.jpg", title: "Welcoming Guru", year: "2005", desc: "Completing the family with laughter and double the steps of love." },
+  { src: "./assets/IMG-20210328-WA0013.jpg", title: "Our Sanctuary", year: "2008", desc: "Building a nesting space filled with warmth, flowers, and joy." },
+  { src: "./assets/IMG_20200510_120608.jpg", title: "Adventures of a Lifetime", year: "2015", desc: "Taking their children on scenic family roadtrips and exploring beautiful places." },
+  { src: "./assets/IMG-20210328-WA0016.jpg", title: "Laughter & Joy", year: "2019", desc: "Sharing small funny everyday candid moments, making life light." },
+  { src: "./assets/IMG20191029170312.jpg", title: "Festive Diwali Glow", year: "2019", desc: "Celebrating the festival of lights dressed in beautiful traditional attire." },
+  { src: "./assets/IMG20191029170449.jpg", title: "Family Sparkles", year: "2019", desc: "Candid family moments sharing laughter and fireworks during Diwali." },
+  { src: "./assets/IMG20191029170626.jpg", title: "Sparklers of Love", year: "2019", desc: "Girish and Rekha lighting up their home with joy and brightness." },
+  { src: "./assets/IMG20191029171054.jpg", title: "Sweetest Diwali", year: "2019", desc: "Sharing traditional sweets and warm family hugs during celebrations." },
+  { src: "./assets/IMG20191029171434.jpg", title: "Brothers' Bond", year: "2019", desc: "Pranav and Guru sharing laughter and styling together." },
+  { src: "./assets/IMG20191029171637.jpg", title: "Festive Togetherness", year: "2019", desc: "Girish, Rekha, and the children posing for a beautiful festive portrait." },
+  { src: "./assets/IMG20191029172110.jpg", title: "A Warm Evening", year: "2019", desc: "Gathered around lights, sharing warmth and stories." },
+  { src: "./assets/IMG20191107181332.jpg", title: "Partners in Life", year: "2019", desc: "Rekha and Girish, sharing a beautiful smile that reflects 17 years of companionship." },
+  { src: "./assets/IMG20191222150812.jpg", title: "Winter Travels", year: "2019", desc: "Exploring scenic vistas and making memories in cooler climes." },
+  { src: "./assets/IMG20200421133701.jpg", title: "Lockdown Smiles", year: "2020", desc: "Staying safe and finding joy in simple moments inside our home sanctuary." },
+  { src: "./assets/IMG20200622214818.jpg", title: "18-Year Anniversary", year: "2020", desc: "Celebrating 18 years of unconditional love with a delicious cake." },
+  { src: "./assets/IMG20200622215134.jpg", title: "Anniversary Wishes", year: "2020", desc: "Cutting the anniversary cake at home surrounded by Pranav and Guru." },
+  { src: "./assets/IMG20200622215602.jpg", title: "Moments of Happiness", year: "2020", desc: "Sharing sweet cake and sweet smiles that light up the room." },
+  { src: "./assets/IMG20200622215751.jpg", title: "Cheers to Togetherness", year: "2020", desc: "Girish & Rekha, walking hand-in-hand through life's twists and turns." },
+  { src: "./assets/IMG20210326191152.jpg", title: "Nature Trails", year: "2021", desc: "Taking in the beautiful, refreshing views during a family getaway." },
+  { src: "./assets/IMG20210326191202.jpg", title: "Family Outdoors", year: "2021", desc: "A gorgeous portrait of the family surrounded by grid greenery." },
+  { src: "./assets/IMG20220622184258.jpg", title: "Celebrating Two Decades", year: "2022", desc: "Marking 20 years of beautiful union, trust, and shared dreams." },
+  { src: "./assets/IMG20220622184453.jpg", title: "Anniversary Dinner", year: "2022", desc: "A beautiful dinner party to celebrate 20 years of love." },
+  { src: "./assets/IMG20220622184914.jpg", title: "Two Decades of Love", year: "2022", desc: "Girish & Rekha cutting their 20th anniversary cake with family." },
+  { src: "./assets/IMG_20240622_212138.jpg", title: "Steps to 25 Years", year: "2024", desc: "Dressed in elegant matching green outfits, celebrating 22 years of love." },
+  { src: "./assets/IMG-20210328-WA0014.jpg", title: "Eternal Companions", year: "2021", desc: "Girish and Rekha, walking hand-in-hand, supporting and inspiring everyone." }
 ];
 
 let currentLightboxIndex = 0;
+
+function initGallery() {
+  const galleryGrid = document.querySelector(".gallery-grid");
+  if (!galleryGrid) return;
+
+  galleryGrid.innerHTML = "";
+
+  GALLERY_PHOTOS.forEach((photo, index) => {
+    const item = document.createElement("div");
+    item.className = "gallery-item reveal";
+    item.setAttribute("tabindex", "0");
+    item.setAttribute("role", "button");
+    item.setAttribute("aria-label", `View large size of ${photo.title} photo`);
+
+    item.innerHTML = `
+      <div class="gallery-img-wrapper">
+        <img src="${photo.src}" alt="${photo.title} - ${photo.desc}" class="gallery-img" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-zoom"><i class="fas fa-search-plus"></i></span>
+          <span class="gallery-title">${photo.title}</span>
+          <span class="gallery-year">${photo.year}</span>
+        </div>
+      </div>
+    `;
+
+    item.addEventListener("click", () => openLightbox(index));
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openLightbox(index);
+      }
+    });
+
+    galleryGrid.appendChild(item);
+  });
+}
 
 function openLightbox(index) {
   const lightbox = document.getElementById("lightbox");
@@ -174,14 +230,13 @@ function openLightbox(index) {
   const photo = GALLERY_PHOTOS[index];
 
   lightboxImg.src = photo.src;
-  // If the image fails to load (because the user hasn't put the asset files in yet), show placeholder text
   lightboxImg.onerror = () => {
-    lightboxImg.src = "data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'600' height%3D'400' viewBox%3D'0 0 600 400'%3E%3Crect width%3D'100%25' height%3D'100%25' fill%3D'%23FAFDFB'%2F%3E%3Ctext x%3D'50%25' y%3D'50%25' font-size%3D'20' text-anchor%3D'middle' font-family%3D'Georgia' fill%3D'%231b4332'%3E" + encodeURIComponent(photo.title) + " Placeholder (Add " + photo.src.split('/')[1] + " to assets/)%3C%2Ftext%3E%3C%2Fsvg%3E";
+    lightboxImg.src = "data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'600' height%3D'400' viewBox%3D'0 0 600 400'%3E%3Crect width%3D'100%25' height%3D'100%25' fill%3D'%23FAFDFB'%2F%3E%3Ctext x%3D'50%25' y%3D'50%25' font-size%3D'20' text-anchor%3D'middle' font-family%3D'Georgia' fill%3D'%231b4332'%3E" + encodeURIComponent(photo.title) + " Placeholder (Add " + photo.src.split('/')[2] + " to assets/)%3C%2Ftext%3E%3C%2Fsvg%3E";
   };
   lightboxCaption.innerText = `${photo.title} (${photo.desc})`;
   
   lightbox.classList.add("show");
-  document.body.style.overflow = "hidden"; // Prevent background scroll
+  document.body.style.overflow = "hidden";
 }
 
 function closeLightbox() {
@@ -202,14 +257,12 @@ function nextLightbox() {
   openLightbox(currentLightboxIndex);
 }
 
-// Close lightbox on click outside the image
 document.getElementById("lightbox")?.addEventListener("click", (e) => {
   if (e.target.id === "lightbox") {
     closeLightbox();
   }
 });
 
-// Close/Navigate lightbox on Escape and Arrow Keys
 document.addEventListener("keydown", (e) => {
   const lightbox = document.getElementById("lightbox");
   if (lightbox && lightbox.classList.contains("show")) {
@@ -658,6 +711,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initAudioPlayer();
   initVideoModal();
   loadWishes();
+  initGallery();
   initFallingPetals();
   initScrollReveal();
   
