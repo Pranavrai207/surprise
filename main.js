@@ -153,12 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 // Standard placeholder files that the user will drop inside the assets folder
 const GALLERY_PHOTOS = [
-  { src: "assets/wedding.png", title: "The Wedding Day", desc: "Married on June 22, 2003. A beautiful wedding ceremony starting a lifespan of love." },
-  { src: "assets/home.png", title: "Our Sanctuary", desc: "Setting up their family home, building a nesting space filled with warmth, flowers, and joy." },
-  { src: "assets/journey.png", title: "Adventures of a Lifetime", desc: "Taking their children on scenic family roadtrips and exploring beautiful places together." },
-  { src: "assets/parenthood.png", title: "Laughter & Joy", desc: "Sharing small funny everyday candid moments, showing that partnership makes life light." },
-  { src: "assets/silver.png", title: "Steps to 25 Years", desc: "Approaching their 24th anniversary, celebrating the journey as they head toward the Silver Jubilee." },
-  { src: "assets/hero.png", title: "Eternal Companions", desc: "Girish & Rekha, walking hand-in-hand, supporting each other and inspiring everyone around them." }
+  { src: "./assets/1586274709860.jpg", title: "The Wedding Day", desc: "Married on June 22, 2002. A beautiful wedding ceremony starting a lifespan of love." },
+  { src: "./assets/IMG-20210328-WA0013.jpg", title: "Our Sanctuary", desc: "Setting up their family home, building a nesting space filled with warmth, flowers, and joy." },
+  { src: "./assets/IMG_20200510_120608.jpg", title: "Adventures of a Lifetime", desc: "Taking their children on scenic family roadtrips and exploring beautiful places together." },
+  { src: "./assets/IMG-20210328-WA0016.jpg", title: "Laughter & Joy", desc: "Sharing small funny everyday candid moments, showing that partnership makes life light." },
+  { src: "./assets/IMG_20240622_212138.jpg", title: "Steps to 25 Years", desc: "Approaching their 24th anniversary, celebrating the journey as they head toward the Silver Jubilee." },
+  { src: "./assets/IMG-20210328-WA0014.jpg", title: "Eternal Companions", desc: "Girish & Rekha, walking hand-in-hand, supporting each other and inspiring everyone around them." }
 ];
 
 let currentLightboxIndex = 0;
