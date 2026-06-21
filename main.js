@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 // Standard placeholder files that the user will drop inside the assets folder
 const GALLERY_PHOTOS = [
-  { src: "./assets/1586274709860.jpg", title: "The Wedding Day", desc: "Married on June 22, 2002. A beautiful wedding ceremony starting a lifespan of love." },
+  { src: "./assets/wedding_day.jpg", title: "The Wedding Day", desc: "Married on June 22, 2002. A beautiful wedding ceremony starting a lifespan of love." },
   { src: "./assets/IMG-20210328-WA0013.jpg", title: "Our Sanctuary", desc: "Setting up their family home, building a nesting space filled with warmth, flowers, and joy." },
   { src: "./assets/IMG_20200510_120608.jpg", title: "Adventures of a Lifetime", desc: "Taking their children on scenic family roadtrips and exploring beautiful places together." },
   { src: "./assets/IMG-20210328-WA0016.jpg", title: "Laughter & Joy", desc: "Sharing small funny everyday candid moments, showing that partnership makes life light." },
