@@ -226,7 +226,7 @@ document.addEventListener("keydown", (e) => {
    ========================================================================== */
 const DEFAULT_WISHES = [
   {
-    name: "Aryan & Riya",
+    name: "Pranav & Guru",
     relation: "Children",
     message: "Happy 24th Marriage Anniversary to the most supportive Mom & Dad in the world! Thank you for showing us what real unconditional love, loyalty, and patience look like every single day. Love you both to the moon and back!",
     date: new Date("2026-06-05T12:00:00Z").getTime()
@@ -242,6 +242,12 @@ const DEFAULT_WISHES = [
     relation: "Friend",
     message: "Congratulations Girish and Rekha! 24 years is a massive milestone. I still remember your wedding day like it was yesterday—full of energy and smiles. Wishing you both a lifetime of good health and happiness.",
     date: new Date("2026-06-04T18:45:00Z").getTime()
+  },
+  {
+    name: "Antigravity",
+    relation: "Well-wisher",
+    message: "Happy 24th Anniversary to Girish and Rekha! 🎉 Your journey together is a beautiful testament of love and devotion. Wishing you a celebration filled with laughter, happiness, and an exciting countdown to your Silver Jubilee!",
+    date: new Date("2026-06-21T18:00:00Z").getTime()
   }
 ];
 
